@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '@components/Layout/Layout'
-// import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
-// import ProductList from '@components/ProductList/ProductList'
+import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
+import ProductList from '@components/ProductList/ProductList'
 
 const HomePage = () => {
   const [productList, setProductList] = useState<TProduct[]>([])
@@ -17,7 +17,8 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div>hola</div>
+      <KawaiiHeader />
+      <ProductList products={productList} />
     </Layout>
   )
 }
