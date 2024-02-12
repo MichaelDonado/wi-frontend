@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import Layout from '@components/Layout/Layout'
+import Layout from '@components/Layout/Layout'
 // import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 // import ProductList from '@components/ProductList/ProductList'
 
@@ -16,8 +16,9 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div>hola</div>
-    
+    <Layout>
+      <div>hola</div>
+    </Layout>
   )
 }
 
