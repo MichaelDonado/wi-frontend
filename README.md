@@ -1,1 +1,1 @@
-# wompi-frontend
+# wi-frontend
