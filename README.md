@@ -14,7 +14,7 @@ git clone https://github.com/MichaelDonado/wi-frontend.git
 Make sure you have Node.js and npm (or yarn) installed on your machine. Then, run the following command to install the dependencies:
 
 npm install
- o
+# o
 yarn install
 
 
@@ -77,5 +77,5 @@ yarn dev
 ## Used stack 
 
 - <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="Imagen" width="30" heigth="30" /> React 
-- <img src="https://cdn.worldvectorlogo.com/logos/semantic-ui-1.svg" alt="Imagen" width="30" heigth="30" /> Semantic-ui
-- <img src="https://cdn.worldvectorlogo.com/logos/nextjs.svg" alt="Imagen" width="30" heigth="30" /> Nextjs
+- <img src="https://cdn.worldvectorlogo.com/logos/semantic-ui.svg" alt="Imagen" width="30" heigth="30" /> Semantic-ui
+- <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Imagen" width="30" heigth="30" /> Nextjs
