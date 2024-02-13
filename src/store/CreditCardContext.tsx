@@ -12,10 +12,9 @@ const CreditCardContext = React.createContext<CreditCardContext | null>(null);
 export function CreditCardContextProvider({
     children,
 }: CreditCardContextProviderProps) {
-
     const [creditCardNumber, setCreditCardNumber] = useState<CreditCardValue | null>(null);
-
     const [modalOpen, setModalOpen] = useState(false);
+    const [showSummary,setShowSummary] = useState(false);
     const [cardData, setCardData] = useState<any>({
         cvc: '',
         expiry: '',
@@ -69,6 +68,8 @@ export function CreditCardContextProvider({
             handleModalClose,
             handlePortalClose,
             handlePortalOpen,
+            showSummary,
+            setShowSummary,
         }),
         [
             creditCardNumber,
@@ -86,6 +87,8 @@ export function CreditCardContextProvider({
             handleModalClose,
             handlePortalClose,
             handlePortalOpen,
+            showSummary,
+            setShowSummary,
         ]
     );
 
@@ -124,6 +127,8 @@ export interface CreditCardContext {
     handleModalClose: () => void;
     handlePortalClose: () => void;
     handlePortalOpen: () => void;
+    showSummary:boolean;
+    setShowSummary:React.Dispatch<React.SetStateAction<boolean>>;
   };
 
 export interface CreditCardContextProviderProps {

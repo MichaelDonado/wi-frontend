@@ -22,14 +22,14 @@ const Navbar = () => {
             title="Home | All products"
           >
             <Avocado />
-            Avo Store {`${creditCardNumber?.name}, ${creditCardNumber?.number}`}
+            Avo Store 
           </Menu.Item>
         </Link>
 
         <Menu.Menu position="right">
           <Link legacyBehavior href="/cart" passHref>
             <Menu.Item active={pathname === '/cart'}>
-              <ShoppingCartIcon cartCount={cartCount} name="Basket" />
+              <ShoppingCartIcon cartCount={cartCount} name="Basket" /> 
             </Menu.Item>
           </Link>
         </Menu.Menu>
