@@ -6,10 +6,12 @@ import { Menu, Container } from 'semantic-ui-react'
 import { Avocado } from '@components/SVGIcons'
 import ShoppingCartIcon from './ShoppingCartIcon'
 import { useCart } from '@store/Cart'
+import { useCreditCardContext } from '@store/CreditCardContext'
 
 const Navbar = () => {
   const { pathname } = useRouter()
   const { count: cartCount } = useCart()
+  const {creditCardNumber} = useCreditCardContext()
 
   return (
     <Menu size="huge" borderless pointing as="header">
@@ -17,17 +19,17 @@ const Navbar = () => {
         <Link legacyBehavior href="/" passHref>
           <Menu.Item
             active={pathname === '/'}
-            title="Inicio | Todos los productos"
+            title="Home | All products"
           >
             <Avocado />
-            Avo Store
+            Avo Store {`${creditCardNumber?.name}, ${creditCardNumber?.number}`}
           </Menu.Item>
         </Link>
 
         <Menu.Menu position="right">
           <Link legacyBehavior href="/cart" passHref>
             <Menu.Item active={pathname === '/cart'}>
-              <ShoppingCartIcon cartCount={cartCount} name="Canasta" />
+              <ShoppingCartIcon cartCount={cartCount} name="Basket" />
             </Menu.Item>
           </Link>
         </Menu.Menu>
