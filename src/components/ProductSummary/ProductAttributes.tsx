@@ -24,9 +24,6 @@ const ProductAttributes = ({
             <Table.Cell>
               {
                 otherAttributes[key as keyof typeof otherAttributes]
-
-                //  console.log('key-->',key)+
-                //  console.log('oter-->',otherAttributes[key as keyof typeof otherAttributes])
               }
             </Table.Cell>
           </Table.Row>

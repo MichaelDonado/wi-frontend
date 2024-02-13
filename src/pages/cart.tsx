@@ -4,16 +4,20 @@ import Layout from '@components/Layout/Layout'
 import CartItemList from '@components/CartItemList/CartItemList'
 import CartSummary from '@components/CartSummary/CartSummary'
 import { useCart, useCartMutations } from '@store/Cart'
+import SwipeableEdgeDrawer from '@components/Drawer/Drawer'
+import { useCreditCardContext } from '@store/CreditCardContext'
 
 const CartPage = () => {
-  const { items, count } = useCart()
+  const { items, subTotal } = useCart()
   const { removeFromCart } = useCartMutations()
+  const { creditCardNumber } = useCreditCardContext()
 
   return (
     <Layout>
       <CartItemList items={items} removeFromCart={removeFromCart} />
       <Divider />
-      <CartSummary totalAmount={count} />
+      <CartSummary totalAmount={subTotal} />
+      {creditCardNumber && <SwipeableEdgeDrawer />}
     </Layout>
   )
 }

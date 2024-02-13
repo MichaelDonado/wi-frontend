@@ -21,6 +21,7 @@ const ModalCreditCard = () => {
         modalOpen,
         setFormErrors,
         handlePortalOpen,
+        setShowSummary,
 
     } = useCreditCardContext();
 
@@ -87,7 +88,10 @@ const ModalCreditCard = () => {
             title: "Credit card has been saved",
             showConfirmButton: false,
             timer: 1500
-          });
+        });
+
+        setShowSummary(true);
+
     };
 
     return (
