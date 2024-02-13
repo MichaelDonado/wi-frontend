@@ -19,9 +19,9 @@ yarn install
 ```
 
 ## Step 3: Configuration
-```
+
 Inside the src/config folder, you will find configuration files for different environments (development, production, etc.). Adjust these files according to your needs.
-```
+
 ## 🏗️ Project Structure
 The structure of the project is as follows:
 ```
@@ -76,8 +76,8 @@ yarn dev
 ```
 
 ## Used stack 
-```
+
 - <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="Imagen" width="30" heigth="30" /> React 
 - <img src="https://cdn.worldvectorlogo.com/logos/semantic-ui.svg" alt="Imagen" width="30" heigth="30" /> Semantic-ui
 - <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Imagen" width="30" heigth="30" /> Nextjs
-```
+
