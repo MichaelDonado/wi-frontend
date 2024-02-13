@@ -14,7 +14,7 @@ git clone https://github.com/MichaelDonado/wi-frontend.git
 Make sure you have Node.js and npm (or yarn) installed on your machine. Then, run the following command to install the dependencies:
 
 npm install
-## o
+ o
 yarn install
 
 
