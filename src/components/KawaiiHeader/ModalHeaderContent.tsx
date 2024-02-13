@@ -12,12 +12,8 @@ const ModalHeaderContent = () => {
             <PosMeMuero size="154px" />
           </Grid.Column>
           <Grid.Column width="11">
-            <Header as="h2">Mataste el aguacate</Header>
-            <p>Lo tocaste tanto que lo mataste.</p>
-            <p>
-              Por otro lado, eres una persona muy curiosa y has descubierto
-              esto. :)
-            </p>
+            <Header as="h2">The avocado is dead</Header>
+            <p>You touched him so much that you killed him. :(</p>
           </Grid.Column>
         </Grid.Row>
       </Grid>

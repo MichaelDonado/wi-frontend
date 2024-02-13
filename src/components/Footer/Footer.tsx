@@ -16,7 +16,7 @@ const Footer = () => (
       <Grid stackable>
         <Grid.Row>
           <Grid.Column width={4}>
-            <Header as="h4" content="Contactame" />
+            <Header as="h4" content="Contact" />
             <List>
               <List.Item
                 icon="linkedin"
@@ -27,7 +27,7 @@ const Footer = () => (
           </Grid.Column>
 
           <Grid.Column width={5}>
-            <Header as="h4" content="Proyectos" />
+            <Header as="h4" content="Projects" />
             <List>
               <List.Item
                 icon="github"
@@ -42,7 +42,7 @@ const Footer = () => (
           </Grid.Column>
 
           <Grid.Column width={7}>
-            <Header as="h4">Hecho por</Header>
+            <Header as="h4">Design by</Header>
             <p>
               Michael Donado
             </p>

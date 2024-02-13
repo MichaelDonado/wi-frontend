@@ -1,4 +1,4 @@
-import React, { Dispatch, useContext, useReducer } from 'react'
+import React, { Dispatch, useContext, useMemo, useReducer, useState } from 'react'
 
 export type CartItemType = TProduct & { quantity: number }
 
@@ -13,9 +13,8 @@ export type CartAction = {
 }
 
 const defaultState = {} as CartState
-
 const CartItemsContext = React.createContext(defaultState)
-const CartDispatchContext = React.createContext((() => {}) as Dispatch<
+const CartDispatchContext = React.createContext((() => { }) as Dispatch<
   CartAction
 >)
 
@@ -25,7 +24,7 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <CartItemsContext.Provider value={state}>
       <CartDispatchContext.Provider value={dispatch}>
-        {children}
+          {children}
       </CartDispatchContext.Provider>
     </CartItemsContext.Provider>
   )
@@ -91,17 +90,10 @@ const getCartSubTotal = (sum: number, item: CartItemType) => {
   return sum
 }
 const getCartCount = (sum: number, item: CartItemType) => sum + item.quantity
-/**
- * Hey there insatiably brain,
- * Are you interested in this pattern where the Context values are
- * exposed without actually provinding access to the Context itself :)
- * https://kentcdodds.com/blog/how-to-use-react-context-effectively
- */
+
 export const useCart = () => {
   const itemsById = useContext(CartItemsContext)
   const items = Object.values(itemsById)
-  // Not familiar with Array.reduce? :)
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
   const count = items.reduce(getCartCount, 0)
   const subTotal = items.reduce(getCartSubTotal, 0)
 
