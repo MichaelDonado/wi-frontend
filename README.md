@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="https://wompi.com/assets/img/landing_pais/banner.png" alt="Imagen" width="300" />
+</p>
 
-## Getting Started
 
-First, run the development server:
+This is a React project with an organized structure to facilitate the development and maintenance of your application. Follow the steps below to get started:
+
+## Step 1: Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/MichaelDonado/wi-frontend.git
+```
+## Step 2: Installs the dependencies
+Make sure you have Node.js and npm (or yarn) installed on your machine. Then, run the following command to install the dependencies:
+```
+npm install
+# o
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Step 3: Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Inside the src/config folder, you will find configuration files for different environments (development, production, etc.). Adjust these files according to your needs.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🏗️ Project Structure
+The structure of the project is as follows:
+```
+src/
+│
+├──public/
+│   ├── ...
+├── components/
+|   |
+│   ├── Layout/
+│   │   ├── Layout.tsx
+│   │   └── ...
+│   │
+│   ├── CardItemList/
+│   │   ├── CardItemList.tsx
+│   │   └── ...
+│   │
+│   ├── ModalCreditCard/
+│   │   ├── ModalCreditCard.tsx
+│   │   └── ...
+│   │
+│   ├── ModalTransaction/
+│   │   ├── ModalTransaction.tsx
+│   │   └── ...
+│   │
+│   ├── ProductList/
+│   │   ├── ProductList.tsx
+│   │   └── ...
+│   │── ... 
+│   │ 
+├── database/
+│   ├── ...
+|   |
+├── Pages/
+│   │   ├──_app.tsx
+│   │   └── ...
+│   |
+│── database/
+│   |   ├── ...
+│   |
+└── ...
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Step 4: Start the Application
+To run the application in development mode, use the following command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+# o
+yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Used stack 
 
-## Deploy on Vercel
+- <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="Imagen" width="30" heigth="30" /> React 
+- <img src="https://cdn.worldvectorlogo.com/logos/semantic-ui.svg" alt="Imagen" width="30" heigth="30" /> Semantic-ui
+- <img src="https://cdn.worldvectorlogo.com/logos/next-js.svg" alt="Imagen" width="30" heigth="30" /> Nextjs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Website:
+ <a target="_blank" href="https://wi-frontend-usqr.vercel.app/">Mirar Sito Web </a> 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
