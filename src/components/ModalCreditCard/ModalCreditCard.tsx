@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Segment, Button, Modal, Form, Message, Portal, Header } from 'semantic-ui-react';
 import Cards, { Focused } from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import { number, expirationDate, cvv } from 'card-validator';
+import { number, expirationDate, cvv, cardholderName } from 'card-validator';
 import { useCreditCardContext } from '@store/CreditCardContext';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -47,22 +47,36 @@ const ModalCreditCard = () => {
         const cardNumberValidation = cardData.number;
         const expiryDateValidation = expirationDate(cardData.expiry);
         const cvvValidation = cvv(cardData.cvc);
+        const nameValidation = cardholderName(cardData.name)
         const errors: any = {};
 
         if (cardNumberValidation.length !== 16) {
             errors.number = 'Invalid card number';
+            setFormErrors(errors);
         }
 
         if (cardNumberValidation.length === 0 || !/^\d+$/.test(cardNumberValidation)) {
             errors.number = 'Please insert number';
+            setFormErrors(errors);
+            return;
+        }
+
+        if (!nameValidation.isValid) {
+            errors.name = 'Invalid holder name';
+            setFormErrors(errors);
+            return;
         }
 
         if (!expiryDateValidation.isValid) {
             errors.expiry = 'Invalid expiry date';
+            setFormErrors(errors);
+            return;
         }
 
         if (!cvvValidation.isValid) {
             errors.cvc = 'Invalid CVV';
+            setFormErrors(errors);
+            return;
         }
 
         setFormErrors(errors);
@@ -75,22 +89,23 @@ const ModalCreditCard = () => {
 
         if (isValid) {
             handleModalClose();
+            setCreditCardNumber({ name: cardData.name, number: cardData.number.slice(11, 15) })
+
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Credit card has been saved",
+                showConfirmButton: false,
+                timer: 1500
+            });
+    
+            setShowSummary(true);
         }
 
         if (creditCardNumber != null) {
             return handlePortalOpen();
         }
-        setCreditCardNumber({ name: cardData.name, number: cardData.number.slice(11, 15) })
-
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Credit card has been saved",
-            showConfirmButton: false,
-            timer: 1500
-        });
-
-        setShowSummary(true);
+       
 
     };
 
